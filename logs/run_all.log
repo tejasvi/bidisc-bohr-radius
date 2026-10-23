@@ -1,0 +1,90 @@
+== certificate for S_5 <= 2.187
+VERIFIED: S({0..5}) <= 2.187  (8912 leaves, 269769 vertex certificates, min slack in B^2 [1.4936073854974728886697624842459513372e-5 +/- 1.76e-43])
+exit 0
+== certificate for S_6 <= 2.363: coverage of the 48 shard logs in logs/s6_shards (a record of a full run)
+COVERED: S({0..6}) <= 2.363: 32768 root cells, 48 shard files (sha256 recomputed and matched), 61118 leaves, 9893956 vertex checks (shared vertices counted per shard)
+exit 0
+== certificate for S_6 <= 2.363: recheck of file sh0.json
+VERIFIED SHARD: k=6 n0=8 domain=full target=2.363 cells=683 leaves=1137 vertices=190934 file=sh0.json sha256=259f3600907387afdf9f520531ce52ccbb1220188f51dd1d607cdd5c3f452af2 min_slack=[0.00010096822117552352058746302493044274621 +/- 3.03e-4
+exit 0
+== certificate for S_6 <= 2.363: recheck of file sh25.json
+VERIFIED SHARD: k=6 n0=8 domain=full target=2.363 cells=683 leaves=1722 vertices=254761 file=sh25.json sha256=cba0454606130b242f12924e8f65244216d4b10d97edef003f2f15041b101c83 min_slack=[8.4829636338499978104440353246429939664e-8 +/- 1.13e-4
+exit 0
+== certificate for S_7 <= 2.552: coverage of the 576 shard logs in logs/s7_shards (a record of a full run)
+COVERED: S({0..7}) <= 2.552: 2048 root cells, 576 shard files (sha256 recomputed and matched), 210960 leaves, 65041100 vertex checks (shared vertices counted per shard)
+exit 0
+== certificate for S_7 <= 2.552: recheck of file sh1.json
+VERIFIED SHARD: k=7 n0=4 domain=half target=2.552 cells=4 leaves=78 vertices=30812 file=sh1.json sha256=8344aefde62d1312c1c9d77002cb66fd39e0e352c791b74aef2afc794c1f4467 min_slack=[0.0059770332518216390676570948297974609780 +/- 2.64e-41] cel
+exit 0
+== certificate for S_7 <= 2.552: recheck of file sh561.json
+VERIFIED SHARD: k=7 n0=4 domain=half target=2.552 cells=3 leaves=5637 vertices=1482801 file=sh561.json sha256=460b52e72cdbf85884fc9d1eeffb53fde2beba837a6fe296976ebf43efae2a65 min_slack=[8.8866768229095150045326180932243870388e-8 +/- 1.09e-4
+exit 0
+== E(r*) at r* = 60333/200000 with s_5 = 2187/1000, s_6 = 2363/1000, s_7 = 2552/1000
+r* = 60333/200000 = 0.3016650000
+B(r*) = 3.81664556417573205674... (truncated)
+E(r*) = 0.99999555680551974754... (truncated to 20 decimals);  E(r*) <= 0.99999556 (rounded up)
+PASS: E(r*) < 1, hence K_2 >= r*
+exit 0
+== Patel's displayed computation (MathDB problem 392062)
+OK    1. B(r) equals the displayed fraction
+OK    2. q_n = ceil(10^8 sqrt n) for 4 <= n <= 20
+OK    3. 2r + r^2 B(r) < first displayed bound
+OK    4. remaining sum + tail < second displayed bound
+OK    5. bound1 + bound2 = displayed total < 1 - 1/50000000
+majorant at r: 0.99999997856876511908... (truncated)
+ALL CHECKS OK
+exit 0
+== consistency: the certificate for S_5 with the bound 2.186 < S_5 must be rejected
+NOT VERIFIED: vertex value not below B^2 at (('c', Fraction(-5, 8)), ('t', Fraction(-7, 8), Fraction(1, 8)), ('t', Fraction(-3, 8), Fraction(1, 8)), ('t', Fract
+exit 1
+== consistency: altered certificate for S_5 (drop_vertex) must be rejected
+NOT VERIFIED: missing vertex certificate (('c', Fraction(-1, 32)), ('t', Fraction(-3, 128), Fraction(1, 128)), ('t', Fraction(125, 128), Fraction(1, 128)), ('c'
+exit 1
+== consistency: altered certificate for S_5 (drop_subtree) must be rejected
+NOT VERIFIED: missing vertex certificate (('c', Fraction(-1, 2)), ('c', Fraction(-1, 1)), ('t', Fraction(-3, 8), Fraction(1, 8)), ('c', Fraction(1, 4)))
+exit 1
+== consistency: altered certificate for S_5 (drop_cell) must be rejected
+NOT VERIFIED: root grid has 4095 cells, expected 4096
+exit 1
+== consistency: altered certificate for S_5 (zero_y) must be rejected
+NOT VERIFIED: vertex value not below B^2 at (('c', Fraction(-1, 1)), ('c', Fraction(0, 1)), ('t', Fraction(-1, 8), Fraction(1, 8)), ('c', Fraction(-1, 1))): [6.
+exit 1
+== consistency: altered certificate for S_5 (bad_halfwidth) must be rejected
+NOT VERIFIED: tangent half-width out of range
+exit 1
+== consistency: altered certificate for S_5 (malformed) must be rejected
+NOT VERIFIED: bad k / n0 / tree / verts
+exit 1
+== consistency: file sh25.json of the certificate for S_6 with the bound 2.362 must be rejected
+NOT VERIFIED: vertex value not below B^2 at (('t', Fraction(-13, 16), Fraction(1, 16)), ('c', Fraction(-1, 1)), ('c', Fraction(-1, 2)), ('t', Fraction(7, 8), Fr
+exit 1
+== consistency: file sh561.json of the certificate for S_7 with the bound 2.551 must be rejected
+NOT VERIFIED: vertex value not below B^2 at (('t', Fraction(3, 16), Fraction(1, 16)), ('c', Fraction(0, 1)), ('t', Fraction(-11, 16), Fraction(1, 16)), ('c', Fr
+exit 1
+== consistency: coverage for S_7 with one shard log missing must fail
+NOT COVERED: 4 root cells missing, e.g. [3, 579, 1155, 1731]
+exit 1
+== consistency: coverage for S_7 with a log that names another shard file must fail
+NOT COVERED: shard file sh6.json listed twice
+exit 1
+== consistency: E at r* + 10^-6 = 301666/10^6 must be >= 1
+r* = 150833/500000 = 0.3016660000
+B(r*) = 3.81664886398087078898... (truncated)
+E(r*) = 1.00000089390171238180... (truncated to 20 decimals);  E(r*) <= 1.00000090 (rounded up)
+FAIL: E(r*) >= 1
+exit 0
+== consistency: E(r*) with s_7 = ceil(10^8 sqrt 7)/10^8 must be >= 1
+r* = 60333/200000 = 0.3016650000
+B(r*) = 3.81664556417573205674... (truncated)
+E(r*) = 1.00003818352022574493... (truncated to 20 decimals);  E(r*) <= 1.00003819 (rounded up)
+FAIL: E(r*) >= 1
+exit 0
+== python -O is refused
+refusing to run with python -O
+exit 1
+refusing to run with python -O
+exit 1
+refusing to run with python -O
+exit 1
+refusing to run with python -O
+exit 1

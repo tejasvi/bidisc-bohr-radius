@@ -1,0 +1,19 @@
+{
+ "k": 5,
+ "n0": 8,
+ "nverts": 269769,
+ "vertex_modules": 270,
+ "cell_modules": 64,
+ "per_v": 1000,
+ "per_c": 64,
+ "leaf_key_refs": 721872,
+ "max_cell_imports": 19,
+ "version": 2,
+ "chunk": 64,
+ "pbudget": 4000,
+ "chunk_modules": 182,
+ "chunks": 14212,
+ "max_chunk_imports": 120,
+ "max_cell_module_keys": 72738,
+ "json_sha256": "ce3e9dd41a0dbd9c3a8ea49b04aa7aaf21f0fe557291a2084c7739461a460a14"
+}

@@ -1,0 +1,6 @@
+Bohr59aK.K2_ge_K : Bohr59a.PatelColligation → Bohr59a.K2Claim
+Bohr59aK.sidon6K : Bohr59a.SidonBound 6 (2363 / 1000)
+'Bohr59aK.K2_ge_K' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Bohr59aK.sidon6K' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Bohr59aK.cells6_all' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Bohr59aK.sidon5K' depends on axioms: [propext, Classical.choice, Quot.sound]

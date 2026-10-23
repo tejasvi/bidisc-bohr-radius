@@ -1,0 +1,7 @@
+Bohr59a.K2_ge_of_sidon7 : Bohr59a.PatelColligation →
+  Bohr59a.SidonBound 5 (2187 / 1000) →
+    Bohr59a.SidonBound 6 (2363 / 1000) → Bohr59a.SidonBound 7 (2552 / 1000) → 60333 / 200000 ≤ Bohr59a.K2
+'Bohr59a.K2_ge_of_sidon7' depends on axioms: [propext, Classical.choice, Quot.sound]
+Bohr59a.SidonBound : ℕ → ℝ → Prop
+Bohr59a.K2 : ℝ
+Bohr59a.PatelColligation : Prop

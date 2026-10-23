@@ -1,0 +1,9 @@
+assembled shard 289: 4 cells, 319 sub-boxes used, 1205352 vertices
+shard 289: assembled from sub-boxes
+assembled shard 300: 4 cells, 319 sub-boxes used, 1396861 vertices
+shard 300: assembled from sub-boxes
+assembled shard 301: 4 cells, 445 sub-boxes used, 3799361 vertices
+shard 301: assembled from sub-boxes
+shard 305: original run finished, copied
+shard 472: original run finished, copied
+shard 520: original run finished, copied

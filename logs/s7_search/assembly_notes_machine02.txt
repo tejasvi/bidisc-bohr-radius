@@ -1,0 +1,6 @@
+shard 7: original run finished, copied
+shard 34: original run finished, copied
+assembled shard 50: 4 cells, 445 sub-boxes used, 3730853 vertices
+shard 50: assembled from sub-boxes
+shard 54: original run finished, copied
+shard 55: original run finished, copied

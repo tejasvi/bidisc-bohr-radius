@@ -1,0 +1,21 @@
+reference tree lean: type core 4 files (closure of Bohr59a.Slice, Bohr59a.Statement, Bohr59a.Hypotheses); lemma core 7 more files (closure of Bohr59a.FinalV3b)
+N7   lean
+     type core identical | lemma core all 7 present, identical | toolchain leanprover/lean4:v4.35.0-rc3 | mathlib c55e6e786f49471c72fbddbec5415808896aec1e | SAME
+K6   lean_kernel
+     type core identical | lemma core 6 of 7 present, identical | toolchain leanprover/lean4:v4.35.0-rc3 | mathlib c55e6e786f49471c72fbddbec5415808896aec1e | SAME
+K7   lean_kernel_s7
+     type core identical | lemma core all 7 present, identical | toolchain leanprover/lean4:v4.35.0-rc3 | mathlib c55e6e786f49471c72fbddbec5415808896aec1e | SAME
+type core files:
+  0f29b7bc892e9fe9ac122a7c26f1164890868eb4d969aa904d68099623ceebc4  Bohr59a/Carath.lean
+  cdbda7cd4a85da27a1a49be8e21991e2410071974b7df41d5e81be6a353eee4e  Bohr59a/Hypotheses.lean
+  7ca1ea6ae9084bdb294d4fed569334943bc198e5722c38787c04f3a5311aa860  Bohr59a/Slice.lean
+  e59d4b4d44ece6e5b118b451b64fba9d4b17185d784628799cc0bb28ec6e83e2  Bohr59a/Statement.lean
+lemma core files:
+  43b4260827ff45aa5ff499bc125cb12e541dc4f7d3469da224b560106cf3831f  Bohr59a/FinalPatel.lean
+  1bc133729d63e5901b79d35b2558c311380b97f7ccdf15bdc796f8f1e52eb88e  Bohr59a/FinalV3.lean
+  e305fe32bdb21fdd2a5dc94c9c2c662b87acbcd411553cdfc7cca992a9131f77  Bohr59a/FinalV3b.lean
+  db34c803d415cae6649f3bbb00d169595c254001e9eb913c08e158762a624d5a  Bohr59a/Newman.lean
+  1eb69202342d1c6faa2e22ba3c5a43edf1a89012af5a18da4cd09b040db87838  Bohr59a/Passage.lean
+  204a2ccff144ba21b494427da872d2c975582facc13b73022218a5cb36be0133  Bohr59a/Patel.lean
+  3b4f3272da3c162d5bc48c439cf401544405a5d1f2cf741d19e71039a3050ea4  Bohr59a/Toeplitz.lean
+COMPOSE_CHECK OK

@@ -1,0 +1,93 @@
+name = "Bohr59a"
+version = "0.1.0"
+keywords = ["math"]
+defaultTargets = ["Bohr59a"]
+
+[leanOptions]
+pp.unicode.fun = true
+relaxedAutoImplicit = false
+autoImplicit = false
+weak.linter.style.header = false
+
+# Toolchain leanprover/lean4:v4.35.0-rc3; Mathlib c55e6e786f49 (lake-manifest.json).
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.35.0-rc3"
+
+[[lean_lib]]
+name = "Bohr59a"
+roots = ["Bohr59a"]
+globs = ["Bohr59a", "Bohr59a.+"]
+
+# The certificate checker (core Lean only), compiled to native code for the `native_decide` shard checks.
+[[lean_lib]]
+name = "Bohr59aCore"
+precompileModules = true
+
+# Generated certificate data (tools/export59.py; base64 string literals, no imports), the shard checks (native_decide;
+# tools/gen_checks.py) and the decoding cross-checks against the exporter (not needed for the proof).
+[[lean_lib]]
+name = "Bohr59aData"
+globs = ["Bohr59aData.+"]
+
+[[lean_lib]]
+name = "Bohr59aCheck"
+globs = ["Bohr59aCheck.+"]
+
+[[lean_lib]]
+name = "Bohr59aTest"
+globs = ["Bohr59aTest.+"]
+
+# Ball arithmetic (C64Core/Ival.lean, core Lean, precompiled) and its soundness (C64/Ival/Sound.lean,
+# C64/Ival/SoundTrig.lean).
+[[lean_lib]]
+name = "C64Core"
+roots = ["C64Core.Ival"]
+precompileModules = true
+
+[[lean_lib]]
+name = "C64"
+roots = ["C64.Ival.Sound", "C64.Ival.SoundTrig"]
+
+# The N theorem from the 49 shard checks (tools/gen_final_n.py; built where the check modules are built).
+[[lean_lib]]
+name = "Bohr59aN"
+globs = ["Bohr59aN.+"]
+
+# The kernel-friendly checker for the K proofs (core Lean only; integers, structural recursion).
+[[lean_lib]]
+name = "Bohr59aCoreK"
+globs = ["Bohr59aCoreK.+"]
+
+# K5 (track K) generated modules (tools/gen_k5.py): vertex certificates (decide +kernel per vertex) and root cells.
+[[lean_lib]]
+name = "Bohr59aK5V"
+globs = ["Bohr59aK5V.+"]
+
+[[lean_lib]]
+name = "Bohr59aK5C"
+globs = ["Bohr59aK5C.+"]
+
+# K5 glue (tools/gen_k5_final.py): cell properties from the cell modules, then Bohr59aK.K2_ge_K5.
+[[lean_lib]]
+name = "Bohr59aK5G"
+globs = ["Bohr59aK5G.+"]
+
+# Untrusted helper: the fixed-point hints of the kernel vertex check, for the k=6 data generator.
+[[lean_exe]]
+name = "k6hints"
+root = "KHints"
+
+# K6 (kernel-only S_6 <= 2.363, hints as data) generated modules (tools/gen_k6.py) and glue (tools/gen_k6_final.py).
+[[lean_lib]]
+name = "Bohr59aK6V"
+globs = ["Bohr59aK6V.+"]
+
+[[lean_lib]]
+name = "Bohr59aK6C"
+globs = ["Bohr59aK6C.+"]
+
+[[lean_lib]]
+name = "Bohr59aK6G"
+globs = ["Bohr59aK6G.+"]

@@ -1,0 +1,82 @@
+{
+ "k": 7,
+ "tag": "H264",
+ "shard": 264,
+ "shard_sha256": "93bc968144cc7f94139eab48707363501b2ba78c223c5bbaf9eb33feca65866f",
+ "cells": [
+  {
+   "i": 264,
+   "leaves": 542,
+   "subboxes": 15,
+   "max_sub_leaves": 62,
+   "top_depth": 9,
+   "key_refs": 395118,
+   "sub_leaves": [
+    33,
+    13,
+    62,
+    24,
+    27,
+    45,
+    45,
+    42,
+    18,
+    59,
+    54,
+    34,
+    14,
+    55,
+    17
+   ]
+  },
+  {
+   "i": 840,
+   "leaves": 76,
+   "subboxes": 2,
+   "max_sub_leaves": 51,
+   "top_depth": 1,
+   "key_refs": 55404,
+   "sub_leaves": [
+    25,
+    51
+   ]
+  },
+  {
+   "i": 1992,
+   "leaves": 118,
+   "subboxes": 3,
+   "max_sub_leaves": 61,
+   "top_depth": 2,
+   "key_refs": 86022,
+   "sub_leaves": [
+    31,
+    26,
+    61
+   ]
+  }
+ ],
+ "mode": "full",
+ "keyfmt": "code",
+ "distinct_vertices": 236580,
+ "vertex_map": {
+  "file": "index/vmap.txt",
+  "sha256": "5c34cfe315b84eb9c880bdd17aabb70fd5838ebfb1e4d47309a642c670a11a1b",
+  "keys": 236580
+ },
+ "lcap": 64,
+ "per_v": 400,
+ "per_k": 200,
+ "per_l": 90,
+ "wcap": 200000,
+ "gcap": 64,
+ "modules": {
+  "V": 0,
+  "K": 34,
+  "L": 74,
+  "W": 5,
+  "A": 5,
+  "G": 6
+ },
+ "generator_sha256": "6d847b8af47e017a9220fd123ce2584e56fcbc18d2128594960bd53f7a7b9159",
+ "gen_k6_sha256": "94c12dbdcb00f8ffa4ce22db5240dd7cea3f9befc93e262a0e2d51fcd11bec5e"
+}

@@ -1,0 +1,50 @@
+{
+ "k": 7,
+ "tag": "H397",
+ "shard": 397,
+ "shard_sha256": "c20788f833e625380743c27bcabdc6d8e4d4ebf531376fc1f11a09e494949e5b",
+ "cells": [
+  {
+   "i": 397,
+   "leaves": 305,
+   "subboxes": 8,
+   "max_sub_leaves": 64,
+   "top_depth": 4,
+   "key_refs": 222345,
+   "sub_leaves": [
+    35,
+    53,
+    20,
+    64,
+    39,
+    41,
+    25,
+    28
+   ]
+  }
+ ],
+ "mode": "full",
+ "keyfmt": "code",
+ "distinct_vertices": 86853,
+ "vertex_map": {
+  "file": "index/vmap.txt",
+  "sha256": "5c34cfe315b84eb9c880bdd17aabb70fd5838ebfb1e4d47309a642c670a11a1b",
+  "keys": 86853
+ },
+ "lcap": 64,
+ "per_v": 400,
+ "per_k": 200,
+ "per_l": 90,
+ "wcap": 200000,
+ "gcap": 64,
+ "modules": {
+  "V": 0,
+  "K": 14,
+  "L": 31,
+  "W": 2,
+  "A": 2,
+  "G": 2
+ },
+ "generator_sha256": "6d847b8af47e017a9220fd123ce2584e56fcbc18d2128594960bd53f7a7b9159",
+ "gen_k6_sha256": "94c12dbdcb00f8ffa4ce22db5240dd7cea3f9befc93e262a0e2d51fcd11bec5e"
+}

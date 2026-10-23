@@ -1,0 +1,6 @@
+shard 541: original run finished, copied
+shard 545: original run finished, copied
+shard 557: original run finished, copied
+assembled shard 561: 3 cells, 255 sub-boxes used, 1482801 vertices
+shard 561: assembled from sub-boxes
+shard 562: original run finished, copied

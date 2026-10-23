@@ -1,0 +1,68 @@
+{
+ "k": 7,
+ "tag": "H296",
+ "shard": 296,
+ "shard_sha256": "9a40d0fed43c0d8c2b0623a08a0cb7d4641b8f61bfc19667573815a8c406c3fd",
+ "cells": [
+  {
+   "i": 296,
+   "leaves": 788,
+   "subboxes": 26,
+   "max_sub_leaves": 64,
+   "top_depth": 13,
+   "key_refs": 574452,
+   "sub_leaves": [
+    6,
+    11,
+    63,
+    11,
+    59,
+    47,
+    58,
+    10,
+    21,
+    8,
+    46,
+    63,
+    64,
+    6,
+    46,
+    21,
+    15,
+    13,
+    24,
+    36,
+    14,
+    29,
+    31,
+    63,
+    10,
+    13
+   ]
+  }
+ ],
+ "mode": "full",
+ "keyfmt": "code",
+ "distinct_vertices": 239922,
+ "vertex_map": {
+  "file": "index/vmap.txt",
+  "sha256": "5c34cfe315b84eb9c880bdd17aabb70fd5838ebfb1e4d47309a642c670a11a1b",
+  "keys": 239922
+ },
+ "lcap": 64,
+ "per_v": 400,
+ "per_k": 200,
+ "per_l": 90,
+ "wcap": 200000,
+ "gcap": 64,
+ "modules": {
+  "V": 0,
+  "K": 36,
+  "L": 79,
+  "W": 3,
+  "A": 3,
+  "G": 2
+ },
+ "generator_sha256": "6d847b8af47e017a9220fd123ce2584e56fcbc18d2128594960bd53f7a7b9159",
+ "gen_k6_sha256": "94c12dbdcb00f8ffa4ce22db5240dd7cea3f9befc93e262a0e2d51fcd11bec5e"
+}

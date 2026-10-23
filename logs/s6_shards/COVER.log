@@ -1,0 +1,1 @@
+COVERED: S({0..6}) <= 2.363: 32768 root cells, 48 shard files (sha256 recomputed and matched), 61118 leaves, 9893956 vertex checks (shared vertices counted per shard)

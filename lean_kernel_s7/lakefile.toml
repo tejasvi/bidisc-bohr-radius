@@ -1,0 +1,82 @@
+name = "Bohr59a"
+version = "0.1.0"
+defaultTargets = []
+
+[leanOptions]
+pp.unicode.fun = true
+relaxedAutoImplicit = false
+autoImplicit = false
+weak.linter.style.header = false
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.35.0-rc3"
+
+[[lean_lib]]
+name = "Bohr59a"
+roots = ["Bohr59a"]
+globs = ["Bohr59a.+"]
+
+[[lean_lib]]
+name = "Bohr59aCore"
+
+[[lean_lib]]
+name = "C64Core"
+roots = ["C64Core.Ival"]
+
+[[lean_lib]]
+name = "C64"
+roots = ["C64.Ival.Sound", "C64.Ival.SoundTrig"]
+
+[[lean_lib]]
+name = "Bohr59aCoreK"
+globs = ["Bohr59aCoreK.+"]
+
+[[lean_lib]]
+name = "Bohr59aSplitK"
+globs = ["Bohr59aSplitK.+"]
+
+[[lean_lib]]
+name = "Bohr59aK7V"
+globs = ["Bohr59aK7V.+"]
+
+[[lean_lib]]
+name = "Bohr59aK7K"
+globs = ["Bohr59aK7K.+"]
+
+[[lean_lib]]
+name = "Bohr59aK7L"
+globs = ["Bohr59aK7L.+"]
+
+[[lean_lib]]
+name = "Bohr59aK7C"
+globs = ["Bohr59aK7C.+"]
+
+[[lean_lib]]
+name = "Bohr59aK7G"
+globs = ["Bohr59aK7G.+"]
+
+[[lean_lib]]
+name = "Bohr59aK7HK"
+globs = ["Bohr59aK7HK.+"]
+
+[[lean_lib]]
+name = "Bohr59aK7HL"
+globs = ["Bohr59aK7HL.+"]
+
+[[lean_lib]]
+name = "Bohr59aK7HW"
+globs = ["Bohr59aK7HW.+"]
+
+[[lean_lib]]
+name = "Bohr59aK7HA"
+globs = ["Bohr59aK7HA.+"]
+
+[[lean_lib]]
+name = "Bohr59aK7HG"
+globs = ["Bohr59aK7HG.+"]
+
+[[lean_lib]]
+name = "Bohr59aK7P"
+globs = ["Bohr59aK7P.+"]
