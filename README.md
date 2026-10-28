@@ -1,19 +1,23 @@
-# A lower bound for the Bohr radius of the bidisc (version 5)
+# A lower bound for the Bohr radius of the bidisc (version 6)
 
 This repository contains the computer-assisted parts of the paper of the same title by Tejasvi Singh Tomar (Zenodo,
-[doi:10.5281/zenodo.23579052](https://doi.org/10.5281/zenodo.23579052)): certificates for upper bounds on three Sidon constants, the
-programs that check them and the final inequality, a check of the computation in an earlier argument, the programs that
-produced the certificates, and the Lean 4 proofs. The archive record [doi:10.5281/zenodo.23579053](https://doi.org/10.5281/zenodo.23579053)
-contains this repository and, in `s6_certificate.tar.gz` and `s7_certificate.tar.gz`, the files (shards) of the second
-and third certificates, which are too large for this repository (3.4 GB and 26.8 GB unpacked). It also holds
-`generated_k7_nonvertex.tar.zst`, with generated Lean files of the proof in `lean_kernel_s7/`.
+[doi:10.5281/zenodo.23716439](https://doi.org/10.5281/zenodo.23716439)): certificates for upper bounds on three Sidon
+constants, the programs that check them and the final inequality, a check of the computation in an earlier argument, the
+programs that produced the certificates, and the Lean 4 proofs. The archive record
+[doi:10.5281/zenodo.23716440](https://doi.org/10.5281/zenodo.23716440) contains this repository and, in
+`s6_certificate.tar.gz` and `s7_certificate.tar.gz`, the files (shards) of the second and third certificates, which are
+too large for this repository (3.4 GB and 26.8 GB unpacked). It also holds `generated_k7_nonvertex.tar.zst`, with
+generated Lean files of the proof in `lean_kernel_s7/`.
 
-Earlier versions of this record: [doi:10.5281/zenodo.23538814](https://doi.org/10.5281/zenodo.23538814) (version 1,
-K₂ > 0.301657), [doi:10.5281/zenodo.23547342](https://doi.org/10.5281/zenodo.23547342) (version 2, with a Lean proof of
-K₂ ≥ 0.301657 and a kernel-only Lean proof of K₂ ≥ 0.301633),
+Earlier versions of this record: [doi:10.5281/zenodo.23538814](https://doi.org/10.5281/zenodo.23538814) (version 1, K₂ >
+0.301657), [doi:10.5281/zenodo.23547342](https://doi.org/10.5281/zenodo.23547342) (version 2, with a Lean proof of K₂ ≥
+0.301657 and a kernel-only Lean proof of K₂ ≥ 0.301633),
 [doi:10.5281/zenodo.23553495](https://doi.org/10.5281/zenodo.23553495) (version 3, K₂ > 0.301665, with two Lean proofs
-of K₂ ≥ 0.301657) and [doi:10.5281/zenodo.23559325](https://doi.org/10.5281/zenodo.23559325) (version 4, with a Lean
-proof of K₂ ≥ 0.301665 and a kernel-only Lean proof of K₂ ≥ 0.301657).
+of K₂ ≥ 0.301657), [doi:10.5281/zenodo.23559325](https://doi.org/10.5281/zenodo.23559325) (version 4, with a Lean proof
+of K₂ ≥ 0.301665 and a kernel-only Lean proof of K₂ ≥ 0.301657) and
+[doi:10.5281/zenodo.23579053](https://doi.org/10.5281/zenodo.23579053) (version 5, which added the kernel-only Lean
+proof of S₇ ≤ 2.552). Version 6 revises the presentation of the paper; the results, certificates, programs and Lean
+files are those of version 5.
 
 ## The result
 
@@ -102,31 +106,45 @@ inequality A₃ + B₂²/2 ≤ 2 of Lemma 3.4 of the paper, which is the hypothe
 `lean/Bohr59a/Statement.lean`. The proof of that inequality uses Andô's inequality and Agler's realization, which are
 not in Mathlib. The certificate checks run as compiled code through `native_decide`, one for the S₅ certificate, one for
 each of the 48 S₆ shards and one for each of the 576 S₇ shards, so `#print axioms` lists the three standard axioms and
-625 auxiliary axioms (`lean/AXIOMS.txt`). The S₇ shards cover only the phases with φ₂ in [0, π]; for them the checking
-program uses the cells of that half of the domain, and Lemma 4.1(e) of the paper, proved in Lean, covers the other
-half. The Lean files that hold the certificate data are not included; `lean/README.md`
-explains how to generate them from the certificate files and compare them with the recorded checksums, and how to build
-the proof.
+625 auxiliary axioms (`lean/AXIOMS.txt`). The checking program contains no definitions marked `implemented_by`,
+`extern`, `unsafe`, `opaque` or `partial`. The trusted base of these checks includes the Lean compiler, the C compiler
+that it uses, the Lean runtime and the compiled core-library functions that the checks call. The theorem
+`Bohr59a.K2_ge_patel`, which uses only the standard axioms, proves Patel's bound K₂ ≥ 0.30158758 under the same
+hypothesis. The S₇ shards cover only the phases with φ₂ in [0, π]; for them the checking program uses the cells of that
+half of the domain, and Lemma 4.1(e) of the paper, proved in Lean, covers the other half. The Lean files that hold the
+certificate data are not included, and they need not be trusted, since the correctness proof of the checking program
+covers every input that it accepts; `lean/README.md` explains how to generate them from the certificate files and
+compare them with the recorded checksums, and how to build the proof.
 
 The directory `lean_kernel/` contains a second proof under the same hypothesis, of the weaker bound K₂ ≥ 0.301657
 (theorem `Bohr59aK.K2_ge_K`). It checks the certificates for S₅ and S₆ in the Lean kernel, without `native_decide`, so
-`#print axioms` lists only the three standard axioms (`lean_kernel/AXIOMS.txt`). It does not use the certificate for
-S₇. Its Lean files generated from the certificates are not included either; `lean_kernel/README.md` explains how to
-generate them and build the proof.
+`#print axioms` lists only the three standard axioms (`lean_kernel/AXIOMS.txt`), and its trusted base is Lean's kernel,
+including the kernel's built-in arithmetic on natural numbers. It does not use the certificate for S₇. Its Lean files
+generated from the certificates are not included either; `lean_kernel/README.md` explains how to generate them and build
+the proof.
 
 The directory `lean_kernel_s7/` proves the bound for S₇ in the kernel in the same way, as
-`Bohr59aK.sidon7K : SidonBound 7 (2552 / 1000)`, with only the three standard axioms (`lean_kernel_s7/AXIOMS.txt`).
-For S₇ it checks the same half of the phase domain as the first proof. The theorems `Bohr59aK.sidon5K` and
+`Bohr59aK.sidon7K : SidonBound 7 (2552 / 1000)`, with only the three standard axioms (`lean_kernel_s7/AXIOMS.txt`). For
+S₇ it checks the same half of the phase domain as the first proof. The theorems `Bohr59aK.sidon5K` and
 `Bohr59aK.sidon6K` of `lean_kernel/` give the bounds for S₅ and S₆ in the same way, and `Bohr59a.K2_ge_of_sidon7` of
 `lean/`, which also uses only the standard axioms, derives K₂ ≥ 0.301665 from the hypothesis and the three bounds. So,
-under the hypothesis, K₂ ≥ 0.301665 follows from four theorems in which every check is run by the Lean kernel; they are in three separate Lean
-projects and are not combined into a single theorem. The generated Lean files of `lean_kernel_s7/` are not included
-either: the 47,877 of them other than the vertex modules are in `generated_k7_nonvertex.tar.zst` in the archive record
-(612,416,942 bytes, SHA-256 `721fff8747f7e09b98d02777f988bf71e7c3344295e7b9968808b06a65ada272`), and `lean_kernel_s7/README.md`
-explains how to generate the 46,634 vertex modules from the certificate for S₇ and how to build the proof, which takes
-about 3,900 hours of single-threaded processes. The archive also contains `Bohr59aK7G/Headline.lean`, which is not
-among the 94,510 built modules: it was never built or checked, and its theorem `K2_ge_K7` is not a claim of this
-release, whose claim is the composition of the four theorems above.
+under the hypothesis, K₂ ≥ 0.301665 follows from four theorems in which every check is run by the Lean kernel; they are
+in three separate Lean projects and are not combined into a single theorem. The generated Lean files of
+`lean_kernel_s7/` are not included either: the 47,877 of them other than the vertex modules are in
+`generated_k7_nonvertex.tar.zst` in the archive record (612,416,942 bytes, SHA-256
+`721fff8747f7e09b98d02777f988bf71e7c3344295e7b9968808b06a65ada272`), and `lean_kernel_s7/README.md` explains how to
+generate the 46,634 vertex modules from the certificate for S₇ and how to build the proof, which takes about 3,900 hours
+of single-threaded processes. The archive also contains `Bohr59aK7G/Headline.lean`, which is not among the 94,510 built
+modules: it was never built or checked, and its theorem `K2_ge_K7` is not a claim of this release, whose claim is the
+composition of the four theorems above.
+
+This project was checked a second time: all its generated modules were regenerated from the certificate byte for byte, a
+complete rebuild gave compiled files byte-identical to those of the first build, and none of the 94,556 compiled modules
+declares an axiom. Lean's kernel replayed 50,254 of the modules, namely all those without vertex theorems and every
+twentieth vertex module, and nanoda, an independent implementation of the kernel, accepted exports of 580 sampled
+modules. The theorems that turn checked cells into the bound were accepted by Lean's kernel through `leanchecker`, by
+nanoda and by lean4lean, a second independent implementation; all three rejected copies in which proofs had been
+swapped. Altered vertex and cell data were rejected.
 
 ## Consistency checks
 
@@ -143,8 +161,10 @@ logs for S₇ when one is missing or when a log names a shard file that another 
 - `paper/`: the LaTeX source and the PDF of the paper.
 - `certificate/s5_certificate.json`: the certificate for S₅ ≤ 2.187. `certificate/s6_SHA256SUMS` and
   `certificate/s7_SHA256SUMS`: the checksums of the 48 files of the certificate for S₆ ≤ 2.363 and of the 576 files of
-  the certificate for S₇ ≤ 2.552, which are in the archive record. `certificate/FORMAT.md` describes the formats.
-- `check/`: the five programs of Section 6 of the paper, the generator for the altered certificates and the driver
+  the certificate for S₇ ≤ 2.552, which are in the archive record. A vertex that occurs in several shards has a
+  certificate in each; the certificate for S₆ has 4,333,585 distinct vertex labels. `certificate/FORMAT.md` describes
+  the formats.
+- `check/`: the five programs of Section 6.1 of the paper, the generator for the altered certificates and the driver
   `run_all.sh`.
 - `search/`: the programs that produced the certificates. They are not part of the proof. They need `numpy`, `scipy` and
   `cvxpy` with the solver `clarabel`. The certificate for S₅ came from the 36 runs `python3 sidon_bb2.py 5 2.187 OUT 8
@@ -158,11 +178,11 @@ logs for S₇ when one is missing or when a log names a shard file that another 
   certificate. `sidon_max.py` computes numerical maxima.
 - `logs/`: the output of `run_all.sh` (`run_all.log`), of the shard checks (`s6_shards/`, `s7_shards/`, each with the
   output `COVER.log` of the coverage check) and of the search for the certificate for S₇ (`s7_search/`).
-- `lean/`: the Lean proof of K₂ ≥ 0.301665 of Section 7 of the paper, without the generated data modules (see
+- `lean/`: the Lean proof of K₂ ≥ 0.301665 of Section 6.2 of the paper, without the generated data modules (see
   `lean/README.md`).
-- `lean_kernel/`: the kernel-only Lean proof of K₂ ≥ 0.301657 of Section 7, without the generated modules (see
-  `lean_kernel/README.md`).
-- `lean_kernel_s7/`: the kernel-only Lean proof of S₇ ≤ 2.552 of Section 7, without the generated modules (see
+- `lean_kernel/`: the kernel-only Lean proof of K₂ ≥ 0.301657, whose bounds for S₅ and S₆ Section 6.2 also uses,
+  without the generated modules (see `lean_kernel/README.md`).
+- `lean_kernel_s7/`: the kernel-only Lean proof of S₇ ≤ 2.552 of Section 6.2, without the generated modules (see
   `lean_kernel_s7/README.md`).
 - `SHA256SUMS`: the SHA-256 checksums of all other files.
 
